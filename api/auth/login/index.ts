@@ -1,6 +1,6 @@
 import { VercelRequest, VercelResponse } from "@vercel/node";
 
-export default function handler(req: VercelRequest, res: VercelResponse) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).send("Method Not Allowed");
   }
@@ -8,7 +8,15 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   try {
     let email: any = undefined;
     let password: any = undefined;
-    const body = req.body;
+    let body: any = req.body;
+
+    if (!body) {
+      body = "";
+      for await (const chunk of req) {
+        body += chunk;
+      }
+    }
+
     if (typeof body === "string") {
       try {
         const parsed = JSON.parse(body);

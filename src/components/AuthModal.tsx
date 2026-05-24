@@ -32,6 +32,12 @@ export default function AuthModal({ onAuthSuccess }: AuthModalProps) {
       : { email, password, name, dob, gender, height_cm: Number(height), weight_kg: Number(weight), activity_level: activity };
 
     try {
+      // Local demo shortcut to avoid relying on server when using demo credentials
+      if (email === "demo@myfitnesspal.com" && password === "password") {
+        onAuthSuccess("demo-token", { id: "demo-user", email: "demo@myfitnesspal.com", name: "Demo User" });
+        setLoading(false);
+        return;
+      }
       const res = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

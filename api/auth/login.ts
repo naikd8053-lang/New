@@ -6,7 +6,21 @@ export default function handler(req: VercelRequest, res: VercelResponse) {
   }
 
   try {
-    const { email, password } = req.body || {};
+    let email: any = undefined;
+    let password: any = undefined;
+    const body = req.body;
+    if (typeof body === "string") {
+      try {
+        const parsed = JSON.parse(body);
+        email = parsed.email;
+        password = parsed.password;
+      } catch (e) {
+        throw new Error("Invalid JSON");
+      }
+    } else if (body && typeof body === "object") {
+      email = body.email;
+      password = body.password;
+    }
 
     // Simple demo credentials support for the public demo account
     if (email === "demo@myfitnesspal.com" && password === "password") {

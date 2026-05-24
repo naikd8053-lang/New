@@ -40,7 +40,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     }
 
     return res.status(401).json({ error: "Invalid credentials" });
-  } catch (err) {
-    return res.status(500).json({ error: String(err) });
+  } catch (err: any) {
+    const bodyType = typeof req.body;
+    const preview = bodyType === 'string' ? (req.body as string).slice(0,200) : (req.body ? Object.keys(req.body).slice(0,20) : null);
+    return res.status(500).json({ error: String(err), bodyType, bodyPreview: preview, headers: req.headers });
   }
 }

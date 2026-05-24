@@ -1,0 +1,10 @@
+{
+  "name": "MyFitnessPal Clone",
+  "description": "A comprehensive calorie and fitness tracking application featuring calorie budgeting, macro planning, water logging, custom exercises, progress charts, and Gemini-powered smart recipe importer.",
+  "requestFramePermissions": [
+    "camera"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

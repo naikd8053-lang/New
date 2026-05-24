@@ -1,0 +1,380 @@
+{
+  "users": [
+    {
+      "id": "demo-user-uuid",
+      "email": "demo@myfitnesspal.com",
+      "password_hash": "03acea3a006694802595354ce2ccfeed173d099633e77be850fdfba17b1011499b94f424fb93c2f242752798844e965e98402302d09580c598976bdd36f2182a:cc1b75f1d669dbc6ad80c3e0538fbc71",
+      "name": "Darshan Naik",
+      "dob": "1995-06-15",
+      "gender": "female",
+      "height_cm": 178,
+      "weight_kg": 75,
+      "activity_level": "moderate",
+      "calorie_goal": 2397,
+      "protein_goal_g": 180,
+      "carbs_goal_g": 270,
+      "fat_goal_g": 67,
+      "created_at": "2026-05-24T07:07:00.394Z"
+    }
+  ],
+  "food_logs": [
+    {
+      "id": "l1",
+      "user_id": "demo-user-uuid",
+      "food_name": "Grilled Chicken Breast",
+      "meal_type": "lunch",
+      "serving_size": "100g",
+      "quantity": 1.5,
+      "calories": 248,
+      "protein_g": 46.5,
+      "carbs_g": 0,
+      "fat_g": 5.4,
+      "logged_at": "2026-05-24",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    },
+    {
+      "id": "l2",
+      "user_id": "demo-user-uuid",
+      "food_name": "White Rice (Cooked)",
+      "meal_type": "lunch",
+      "serving_size": "1 cup (158g)",
+      "quantity": 1,
+      "calories": 205,
+      "protein_g": 4.2,
+      "carbs_g": 44.5,
+      "fat_g": 0.4,
+      "logged_at": "2026-05-24",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    },
+    {
+      "id": "l3",
+      "user_id": "demo-user-uuid",
+      "food_name": "Boiled Egg",
+      "meal_type": "breakfast",
+      "serving_size": "1 large (50g)",
+      "quantity": 2,
+      "calories": 156,
+      "protein_g": 12.6,
+      "carbs_g": 1.2,
+      "fat_g": 10.6,
+      "logged_at": "2026-05-24",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    },
+    {
+      "id": "l4",
+      "user_id": "demo-user-uuid",
+      "food_name": "Banana",
+      "meal_type": "breakfast",
+      "serving_size": "1 medium (118g)",
+      "quantity": 1,
+      "calories": 105,
+      "protein_g": 1.3,
+      "carbs_g": 27,
+      "fat_g": 0.4,
+      "logged_at": "2026-05-24",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    },
+    {
+      "id": "l5",
+      "user_id": "demo-user-uuid",
+      "food_name": "Grilled Salmon",
+      "meal_type": "dinner",
+      "serving_size": "100g",
+      "quantity": 2,
+      "calories": 412,
+      "protein_g": 44,
+      "carbs_g": 0,
+      "fat_g": 24,
+      "logged_at": "2026-05-23",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    },
+    {
+      "id": "l6",
+      "user_id": "demo-user-uuid",
+      "food_name": "Steamed Broccoli",
+      "meal_type": "dinner",
+      "serving_size": "1 cup (150g)",
+      "quantity": 1.5,
+      "calories": 83,
+      "protein_g": 5.6,
+      "carbs_g": 16.5,
+      "fat_g": 0.9,
+      "logged_at": "2026-05-23",
+      "created_at": "2026-05-24T07:07:00.395Z"
+    }
+  ],
+  "custom_foods": [
+    {
+      "id": "sf1",
+      "name": "Apple",
+      "barcode": "0000000000010",
+      "serving_size": "1 medium (182g)",
+      "calories": 95,
+      "protein_g": 0.5,
+      "carbs_g": 25,
+      "fat_g": 0.3,
+      "user_id": "global"
+    },
+    {
+      "id": "sf2",
+      "name": "Banana",
+      "barcode": "0000000000020",
+      "serving_size": "1 medium (118g)",
+      "calories": 105,
+      "protein_g": 1.3,
+      "carbs_g": 27,
+      "fat_g": 0.4,
+      "user_id": "global"
+    },
+    {
+      "id": "sf3",
+      "name": "Grilled Chicken Breast",
+      "barcode": "0000000000018",
+      "serving_size": "100g",
+      "calories": 165,
+      "protein_g": 31,
+      "carbs_g": 0,
+      "fat_g": 3.6,
+      "user_id": "global"
+    },
+    {
+      "id": "sf4",
+      "name": "White Rice (Cooked)",
+      "barcode": "0000000000040",
+      "serving_size": "1 cup (158g)",
+      "calories": 205,
+      "protein_g": 4.2,
+      "carbs_g": 44.5,
+      "fat_g": 0.4,
+      "user_id": "global"
+    },
+    {
+      "id": "sf5",
+      "name": "Whole Milk",
+      "barcode": "0000000000050",
+      "serving_size": "1 glass (240ml)",
+      "calories": 150,
+      "protein_g": 8,
+      "carbs_g": 12,
+      "fat_g": 8,
+      "user_id": "global"
+    },
+    {
+      "id": "sf6",
+      "name": "Boiled Egg",
+      "barcode": "0000000000025",
+      "serving_size": "1 large (50g)",
+      "calories": 78,
+      "protein_g": 6.3,
+      "carbs_g": 0.6,
+      "fat_g": 5.3,
+      "user_id": "global"
+    },
+    {
+      "id": "sf7",
+      "name": "Raw Almonds",
+      "barcode": "0000000000070",
+      "serving_size": "1 oz (28g)",
+      "calories": 164,
+      "protein_g": 6,
+      "carbs_g": 6,
+      "fat_g": 14,
+      "user_id": "global"
+    },
+    {
+      "id": "sf8",
+      "name": "Greek Yogurt (Plain)",
+      "barcode": "0000000000032",
+      "serving_size": "150g",
+      "calories": 100,
+      "protein_g": 15,
+      "carbs_g": 6,
+      "fat_g": 2,
+      "user_id": "global"
+    },
+    {
+      "id": "sf9",
+      "name": "Grilled Salmon",
+      "barcode": "0000000000090",
+      "serving_size": "100g",
+      "calories": 206,
+      "protein_g": 22,
+      "carbs_g": 0,
+      "fat_g": 12,
+      "user_id": "global"
+    },
+    {
+      "id": "sf10",
+      "name": "Avocado",
+      "barcode": "0000000000100",
+      "serving_size": "1 medium (150g)",
+      "calories": 240,
+      "protein_g": 3,
+      "carbs_g": 12,
+      "fat_g": 22,
+      "user_id": "global"
+    },
+    {
+      "id": "sf11",
+      "name": "Cooked Oatmeal",
+      "barcode": "0000000000110",
+      "serving_size": "1 cup (234g)",
+      "calories": 150,
+      "protein_g": 5,
+      "carbs_g": 27,
+      "fat_g": 2.5,
+      "user_id": "global"
+    },
+    {
+      "id": "sf12",
+      "name": "Peanut Butter",
+      "barcode": "0000000000049",
+      "serving_size": "1 tbsp (16g)",
+      "calories": 94,
+      "protein_g": 4,
+      "carbs_g": 3,
+      "fat_g": 8,
+      "user_id": "global"
+    },
+    {
+      "id": "sf13",
+      "name": "Whole Wheat Bread",
+      "barcode": "0000000000056",
+      "serving_size": "1 slice (28g)",
+      "calories": 70,
+      "protein_g": 3,
+      "carbs_g": 12,
+      "fat_g": 1,
+      "user_id": "global"
+    },
+    {
+      "id": "sf14",
+      "name": "Steamed Broccoli",
+      "barcode": "0000000000140",
+      "serving_size": "1 cup (150g)",
+      "calories": 55,
+      "protein_g": 3.7,
+      "carbs_g": 11,
+      "fat_g": 0.6,
+      "user_id": "global"
+    },
+    {
+      "id": "sf15",
+      "name": "Whey Protein Powder",
+      "barcode": "0000000000063",
+      "serving_size": "1 scoop (30g)",
+      "calories": 120,
+      "protein_g": 24,
+      "carbs_g": 3,
+      "fat_g": 1.5,
+      "user_id": "global"
+    },
+    {
+      "id": "sf16",
+      "name": "Baked Sweet Potato",
+      "barcode": "0000000000160",
+      "serving_size": "1 medium (150g)",
+      "calories": 130,
+      "protein_g": 2,
+      "carbs_g": 30,
+      "fat_g": 0.2,
+      "user_id": "global"
+    },
+    {
+      "id": "sf17",
+      "name": "Extra Virgin Olive Oil",
+      "barcode": "0000000000170",
+      "serving_size": "1 tbsp (14ml)",
+      "calories": 119,
+      "protein_g": 0,
+      "carbs_g": 0,
+      "fat_g": 13.5,
+      "user_id": "global"
+    },
+    {
+      "id": "sf18",
+      "name": "Canned Tuna in Water",
+      "barcode": "0000000000070",
+      "serving_size": "1 can (150g)",
+      "calories": 135,
+      "protein_g": 30,
+      "carbs_g": 0,
+      "fat_g": 1.5,
+      "user_id": "global"
+    },
+    {
+      "id": "sf19",
+      "name": "Mixed Garden Salad",
+      "barcode": "0000000000190",
+      "serving_size": "2 cups (100g)",
+      "calories": 15,
+      "protein_g": 1,
+      "carbs_g": 3,
+      "fat_g": 0.2,
+      "user_id": "global"
+    },
+    {
+      "id": "sf20",
+      "name": "Cooked Black Beans",
+      "barcode": "0000000000200",
+      "serving_size": "1/2 cup (130g)",
+      "calories": 114,
+      "protein_g": 7.6,
+      "carbs_g": 20,
+      "fat_g": 0.5,
+      "user_id": "global"
+    }
+  ],
+  "exercise_logs": [
+    {
+      "id": "ex1",
+      "user_id": "demo-user-uuid",
+      "activity_name": "Running (Moderate Pace)",
+      "duration_minutes": 30,
+      "calories_burned": 320,
+      "logged_at": "2026-05-24"
+    },
+    {
+      "id": "ex2",
+      "user_id": "demo-user-uuid",
+      "activity_name": "Cycling",
+      "duration_minutes": 45,
+      "calories_burned": 400,
+      "logged_at": "2026-05-23"
+    }
+  ],
+  "weight_entries": [
+    {
+      "id": "w1",
+      "user_id": "demo-user-uuid",
+      "weight_kg": 76.2,
+      "logged_at": "2026-05-20"
+    },
+    {
+      "id": "w2",
+      "user_id": "demo-user-uuid",
+      "weight_kg": 75.8,
+      "logged_at": "2026-05-22"
+    },
+    {
+      "id": "w3",
+      "user_id": "demo-user-uuid",
+      "weight_kg": 75,
+      "logged_at": "2026-05-24"
+    }
+  ],
+  "water_logs": [
+    {
+      "id": "wt1",
+      "user_id": "demo-user-uuid",
+      "amount_ml": 1250,
+      "logged_at": "2026-05-24"
+    },
+    {
+      "id": "wt2",
+      "user_id": "demo-user-uuid",
+      "amount_ml": 2000,
+      "logged_at": "2026-05-23"
+    }
+  ]
+}

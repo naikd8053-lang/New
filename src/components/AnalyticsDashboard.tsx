@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import safeJson from "../utils/safeJson";
 import { TrendingUp, Award, BarChart3, Calendar, FileDown, ArrowDownLeft, AlertCircle } from "lucide-react";
 import { motion } from "motion/react";
 import { WeeklySummaryDay, WeightEntry } from "../types";
@@ -32,8 +33,8 @@ export default function AnalyticsDashboard({ token }: AnalyticsDashboardProps) {
         throw new Error("Unable to read historical wellness analytics");
       }
 
-      const weekJson = await weeklyRes.json();
-      const weightJson = await weightRes.json();
+      const weekJson = await safeJson(weeklyRes);
+      const weightJson = await safeJson(weightRes);
 
       setWeeklyData(weekJson);
       setWeightData(weightJson);

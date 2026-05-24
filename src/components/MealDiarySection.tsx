@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import safeJson from "../utils/safeJson";
 import { Plus, Search, Trash2, ShieldAlert, Sparkles, ChevronDown, Check, Undo, ArrowLeft, Camera, Layers, Flame, ArrowRight, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { FoodLog, CustomFood } from "../types";
@@ -62,8 +63,8 @@ export default function MealDiarySection({ foods, token, onUpdate }: MealDiarySe
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (response.ok) {
-        const data = await response.json();
-        setSearchResults(data);
+        const data = await safeJson(response);
+        setSearchResults(data || []);
       }
     } catch (err) {
       console.error(err);

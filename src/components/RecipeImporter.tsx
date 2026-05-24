@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import safeJson from "../utils/safeJson";
 import { Sparkles, ArrowRight, Check, AlertCircle, RefreshCw, ChefHat, LogIn, Plus } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { AIProcessedRecipe } from "../types";
@@ -39,8 +40,8 @@ export default function RecipeImporter({ token, onLoggedSuccess }: RecipeImporte
         throw new Error("Unable to parse recipe. Please inspect connection or API key.");
       }
 
-      const data = await response.json();
-      setResult(data);
+      const data = await safeJson(response);
+      setResult(data || null);
       setServingsMultiplier(1);
     } catch (err: any) {
       setError(err.message || "Recipe import failed. Please verify your Gemini API Key.");

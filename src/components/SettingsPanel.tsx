@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import safeJson from "../utils/safeJson";
 import { User, Activity, Flame, Shield, HelpCircle, Save, CheckCircle2, RotateCcw, Smartphone, BellRing } from "lucide-react";
 import { UserProfile } from "../types";
 
@@ -43,7 +44,8 @@ export default function SettingsPanel({ token, onUpdateSuccess }: SettingsPanelP
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
-        const data: UserProfile = await res.json();
+        const data = await safeJson(res) as UserProfile | null;
+        if (!data) throw new Error("Empty profile response");
         setProfile(data);
         setName(data.name);
         setDob(data.dob);

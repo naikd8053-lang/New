@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useCallback } from "react";
+import safeJson from "./utils/safeJson";
 import { 
   Home, 
   BookOpen, 
@@ -60,8 +61,8 @@ export default function App() {
         })
       });
       if (res.ok) {
-        const data = await res.json();
-        handleAuthSuccess(data.token, data.user);
+        const data = await safeJson(res);
+        if (data) handleAuthSuccess(data.token, data.user);
       }
     } catch (err) {
       console.warn("Demo auto-login fallback failed:", err);
@@ -76,7 +77,7 @@ export default function App() {
         headers: { "Authorization": `Bearer ${token}` }
       });
       if (res.ok) {
-        const data = await res.json();
+        const data = await safeJson(res);
         setDiary(data);
       }
     } catch (err) {

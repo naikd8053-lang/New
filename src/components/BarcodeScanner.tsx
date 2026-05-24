@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
+import safeJson from "../utils/safeJson";
 import { Camera, CornerDownLeft, Eye, RotateCcw, AlertCircle, Sparkles, Check, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { CustomFood } from "../types";
@@ -80,8 +81,8 @@ export default function BarcodeScanner({ onScanSuccess, onClose, token }: Barcod
       if (!response.ok) {
         throw new Error("Unable to lookup scanned barcode");
       }
-      const data = await response.json();
-      setScannedFood(data);
+      const data = await safeJson(response);
+      setScannedFood(data || null);
     } catch (err: any) {
       setError(err.message || "Product lookup failed. Please add code manually.");
     } finally {

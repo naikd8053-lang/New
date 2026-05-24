@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import safeJson from "../utils/safeJson";
 import { LogIn, Key, Mail, Sparkles, User, UserPlus, HelpCircle } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
@@ -37,9 +38,9 @@ export default function AuthModal({ onAuthSuccess }: AuthModalProps) {
         body: JSON.stringify(body)
       });
 
-      const data = await res.json();
+      const data = await safeJson(res);
       if (!res.ok) {
-        throw new Error(data.error || "Authentication failed.");
+        throw new Error((data && data.error) || "Authentication failed.");
       }
 
       onAuthSuccess(data.token, data.user);
